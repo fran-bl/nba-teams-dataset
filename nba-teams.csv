@@ -1,0 +1,32 @@
+team_id,team_name,abbreviation,location,arena_name,established_year,championships_won,conference_titles,division_titles,all_time_wins,all_time_win_percentage,mascot,head_coach,owner_id,owner_name
+0,Atlanta Hawks,ATL,Atlanta,State Farm Arena,1949,1,0,12,2929,0.493,Harry the Hawk,Quin Snyder,0,Tony Ressler
+1,Boston Celtics,BOS,Boston,TD Garden,1946,18,11,34,3636,0.595,Lucky the Leprechaun,Joe Mazzulla,1,Wyc Grousbeck
+2,Brooklyn Nets,BKN,Brooklyn,Barclays Center,1976,2,2,5,2028,0.440,,Jordi Fernandez,2,Joe Tsai
+3,Charlotte Hornets,CHA,Charlotte,Spectrum Center,1988,0,0,0,1175,0.433,Hugo the Hornet,Charles Lee,3,Rick Schnall
+4,Chicago Bulls,CHI,Chicago,United Center,1966,6,6,9,2384,0.509,Benny the Bull,Billy Donovan,4,Michael Reinsdorf
+5,Cleveland Cavaliers,CLE,Cleveland,Rocket Mortgage FieldHouse,1970,1,5,7,2034,0.467,Moondog,Kenny Atkinson,5,Dan Gilbert
+6,Dallas Mavericks,DAL,Dallas,American Airlines Center,1980,1,3,5,1798,0.507,Champ,Jason Kidd,6,Patrick Dumont
+7,Denver Nuggets,DEN,Denver,Ball Arena,1976,1,1,13,2367,0.513,Rocky the Mountain Lion,Michael Malone,7,Stan Kroenke
+8,Detroit Pistons,DET,Detroit,Little Caesars Arena,1948,3,5,11,2827,0.471,Hooper,J.B. Bickerstaff,8,Tom Gores
+9,Golden State Warriors,GSW,San Francisco,Chase Center,1946,7,7,12,2971,0.487,,Steve Kerr,9,Joe Lacob
+10,Houston Rockets,HOU,Houston,Toyota Center,1967,2,4,8,2370,0.514,Clutch the Bear,Ime Udoka,10,Tilman Fertitta
+11,Indiana Pacers,IND,Indianapolis,Gainbridge Fieldhouse,1976,3,1,9,2358,0.511,Boomer,Rick Carlisle,11,Herb Simon
+12,Los Angeles Clippers,LAC,Los Angeles,Intuit Dome,1970,0,0,3,1843,0.423,Chuck the Condor,Tyronn Lue,12,Steve Ballmer
+13,Los Angeles Lakers,LAL,Los Angeles,Crypto.com Arena,1948,17,19,33,3552,0.591,,JJ Redick,13,Jeanie Buss
+14,Memphis Grizzlies,MEM,Memphis,FedExForum,1995,0,0,2,999,0.432,Grizz,Taylor Jenkins,14,Robert Pera
+15,Miami Heat,MIA,Miami,Kaseya Center,1988,3,7,16,1521,0.527,Burnie,Erik Spoelstra,15,Micky Arison
+16,Milwaukee Bucks,MIL,Milwaukee,Fiserv Forum,1968,2,3,19,2390,0.528,Bango,Doc Rivers,16,Wesley Edens
+17,Minnesota Timberwolves,MIN,Minneapolis,Target Center,1989,0,0,1,1148,0.411,Crunch the Wolf,Chris Finch,17,Glen Taylor
+18,New Orleans Pelicans,NOP,New Orleans,Smoothie King Center,2002,0,0,1,833,0.471,Pierre the Pelican,Willie Green,18,Gayle Benson
+19,New York Knicks,NYK,New York City,Madison Square Garden,1946,2,4,8,2975,0.487,,Tom Thibodeau,19,Jim Dolan
+20,Oklahoma City Thunder,OKC,Oklahoma City,Paycom Center,1967,1,4,12,2471,0.536,Rumble the Bison,Mark Daigneault,20,Clay Bennett
+21,Orlando Magic,ORL,Orlando,Kia Center,1989,0,2,7,1317,0.470,Stuff the Magic Dragon,Jamahl Mosley,21,Dan DeVos
+22,Philadelphia 76ers,PHI,Philadelphia,Wells Fargo Center,1949,3,5,12,3101,0.522,Franklin,Nick Nurse,22,Joshua Harris
+22,Philadelphia 76ers,PHI,Philadelphia,Wells Fargo Center,1949,3,5,12,3101,0.522,Franklin,Nick Nurse,23,David Blitzer
+23,Phoenix Suns,PHX,Phoenix,Footprint Center,1968,0,3,8,2430,0.537,The Gorilla,Mike Budenholzer,24,Mat Ishbia
+24,Portland Trail Blazers,POR,Portland,Moda Center,1970,1,3,6,2292,0.525,Blaze the Trail Cat,Chauncey Billups,25,Jody Allen
+25,Sacramento Kings,SAC,Sacramento,Golden 1 Center,1948,1,0,6,2748,0.458,Slamson the Lion,Mike Brown,26,Vivek Ranadive
+26,San Antonio Spurs,SAS,San Antonio,Frost Bank Center,1976,5,6,22,2683,0.582,Coyote,Gregg Popovich,27,Peter Holt
+27,Toronto Raptors,TOR,Toronto,Scotiabank Arena,1995,1,1,7,1097,0.474,The Raptor,Darko Rajakovic,28,Lawrence Tanenbaum
+28,Utah Jazz,UTA,Salt Lake City,Delta Center,1974,0,2,11,2177,0.540,Jazz Bear,Will Hardy,29,Ryan Smith
+29,Washington Wizards,WAS,"Washington, D.C.",Capital One Arena,1961,1,4,8,2272,0.447,G-Wiz,Brian Keefe,30,Ted Leonsis

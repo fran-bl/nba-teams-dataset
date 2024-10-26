@@ -1,0 +1,636 @@
+[
+    {
+        "team_id": 0,
+        "team_name": "Atlanta Hawks",
+        "abbreviation": "ATL",
+        "location": "Atlanta",
+        "arena_name": "State Farm Arena",
+        "established_year": 1949,
+        "championships_won": 1,
+        "conference_titles": 0,
+        "division_titles": 12,
+        "all_time_wins": 2929,
+        "all_time_win_percentage": 0.493,
+        "mascot": "Harry the Hawk",
+        "head_coach": "Quin Snyder",
+        "owners": [
+            {
+                "owner_id": 0,
+                "owner_name": "Tony Ressler"
+            }
+        ]
+    },
+    {
+        "team_id": 1,
+        "team_name": "Boston Celtics",
+        "abbreviation": "BOS",
+        "location": "Boston",
+        "arena_name": "TD Garden",
+        "established_year": 1946,
+        "championships_won": 18,
+        "conference_titles": 11,
+        "division_titles": 34,
+        "all_time_wins": 3636,
+        "all_time_win_percentage": 0.595,
+        "mascot": "Lucky the Leprechaun",
+        "head_coach": "Joe Mazzulla",
+        "owners": [
+            {
+                "owner_id": 1,
+                "owner_name": "Wyc Grousbeck"
+            }
+        ]
+    },
+    {
+        "team_id": 2,
+        "team_name": "Brooklyn Nets",
+        "abbreviation": "BKN",
+        "location": "Brooklyn",
+        "arena_name": "Barclays Center",
+        "established_year": 1976,
+        "championships_won": 2,
+        "conference_titles": 2,
+        "division_titles": 5,
+        "all_time_wins": 2028,
+        "all_time_win_percentage": 0.440,
+        "mascot": null,
+        "head_coach": "Jordi Fernandez",
+        "owners": [
+            {
+                "owner_id": 2,
+                "owner_name": "Joe Tsai"
+            }
+        ]
+    },
+    {
+        "team_id": 3,
+        "team_name": "Charlotte Hornets",
+        "abbreviation": "CHA",
+        "location": "Charlotte",
+        "arena_name": "Spectrum Center",
+        "established_year": 1988,
+        "championships_won": 0,
+        "conference_titles": 0,
+        "division_titles": 0,
+        "all_time_wins": 1175,
+        "all_time_win_percentage": 0.433,
+        "mascot": "Hugo the Hornet",
+        "head_coach": "Charles Lee",
+        "owners": [
+            {
+                "owner_id": 3,
+                "owner_name": "Rick Schnall"
+            }
+        ]
+    },
+    {
+        "team_id": 4,
+        "team_name": "Chicago Bulls",
+        "abbreviation": "CHI",
+        "location": "Chicago",
+        "arena_name": "United Center",
+        "established_year": 1966,
+        "championships_won": 6,
+        "conference_titles": 6,
+        "division_titles": 9,
+        "all_time_wins": 2384,
+        "all_time_win_percentage": 0.509,
+        "mascot": "Benny the Bull",
+        "head_coach": "Billy Donovan",
+        "owners": [
+            {
+                "owner_id": 4,
+                "owner_name": "Michael Reinsdorf"
+            }
+        ]
+    },
+    {
+        "team_id": 5,
+        "team_name": "Cleveland Cavaliers",
+        "abbreviation": "CLE",
+        "location": "Cleveland",
+        "arena_name": "Rocket Mortgage FieldHouse",
+        "established_year": 1970,
+        "championships_won": 1,
+        "conference_titles": 5,
+        "division_titles": 7,
+        "all_time_wins": 2034,
+        "all_time_win_percentage": 0.467,
+        "mascot": "Moondog",
+        "head_coach": "Kenny Atkinson",
+        "owners": [
+            {
+                "owner_id": 5,
+                "owner_name": "Dan Gilbert"
+            }
+        ]
+    },
+    {
+        "team_id": 6,
+        "team_name": "Dallas Mavericks",
+        "abbreviation": "DAL",
+        "location": "Dallas",
+        "arena_name": "American Airlines Center",
+        "established_year": 1980,
+        "championships_won": 1,
+        "conference_titles": 3,
+        "division_titles": 5,
+        "all_time_wins": 1798,
+        "all_time_win_percentage": 0.507,
+        "mascot": "Champ",
+        "head_coach": "Jason Kidd",
+        "owners": [
+            {
+                "owner_id": 6,
+                "owner_name": "Patrick Dumont"
+            }
+        ]
+    },
+    {
+        "team_id": 7,
+        "team_name": "Denver Nuggets",
+        "abbreviation": "DEN",
+        "location": "Denver",
+        "arena_name": "Ball Arena",
+        "established_year": 1976,
+        "championships_won": 1,
+        "conference_titles": 1,
+        "division_titles": 13,
+        "all_time_wins": 2367,
+        "all_time_win_percentage": 0.513,
+        "mascot": "Rocky the Mountain Lion",
+        "head_coach": "Michael Malone",
+        "owners": [
+            {
+                "owner_id": 7,
+                "owner_name": "Stan Kroenke"
+            }
+        ]
+    },
+    {
+        "team_id": 8,
+        "team_name": "Detroit Pistons",
+        "abbreviation": "DET",
+        "location": "Detroit",
+        "arena_name": "Little Caesars Arena",
+        "established_year": 1948,
+        "championships_won": 3,
+        "conference_titles": 5,
+        "division_titles": 11,
+        "all_time_wins": 2827,
+        "all_time_win_percentage": 0.471,
+        "mascot": "Hooper",
+        "head_coach": "J.B. Bickerstaff",
+        "owners": [
+            {
+                "owner_id": 8,
+                "owner_name": "Tom Gores"
+            }
+        ]
+    },
+    {
+        "team_id": 9,
+        "team_name": "Golden State Warriors",
+        "abbreviation": "GSW",
+        "location": "San Francisco",
+        "arena_name": "Chase Center",
+        "established_year": 1946,
+        "championships_won": 7,
+        "conference_titles": 7,
+        "division_titles": 12,
+        "all_time_wins": 2971,
+        "all_time_win_percentage": 0.487,
+        "mascot": null,
+        "head_coach": "Steve Kerr",
+        "owners": [
+            {
+                "owner_id": 9,
+                "owner_name": "Joe Lacob"
+            }
+        ]
+    },
+    {
+        "team_id": 10,
+        "team_name": "Houston Rockets",
+        "abbreviation": "HOU",
+        "location": "Houston",
+        "arena_name": "Toyota Center",
+        "established_year": 1967,
+        "championships_won": 2,
+        "conference_titles": 4,
+        "division_titles": 8,
+        "all_time_wins": 2370,
+        "all_time_win_percentage": 0.514,
+        "mascot": "Clutch the Bear",
+        "head_coach": "Ime Udoka",
+        "owners": [
+            {
+                "owner_id": 10,
+                "owner_name": "Tilman Fertitta"
+            }
+        ]
+    },
+    {
+        "team_id": 11,
+        "team_name": "Indiana Pacers",
+        "abbreviation": "IND",
+        "location": "Indianapolis",
+        "arena_name": "Gainbridge Fieldhouse",
+        "established_year": 1976,
+        "championships_won": 3,
+        "conference_titles": 1,
+        "division_titles": 9,
+        "all_time_wins": 2358,
+        "all_time_win_percentage": 0.511,
+        "mascot": "Boomer",
+        "head_coach": "Rick Carlisle",
+        "owners": [
+            {
+                "owner_id": 11,
+                "owner_name": "Herb Simon"
+            }
+        ]
+    },
+    {
+        "team_id": 12,
+        "team_name": "Los Angeles Clippers",
+        "abbreviation": "LAC",
+        "location": "Los Angeles",
+        "arena_name": "Intuit Dome",
+        "established_year": 1970,
+        "championships_won": 0,
+        "conference_titles": 0,
+        "division_titles": 3,
+        "all_time_wins": 1843,
+        "all_time_win_percentage": 0.423,
+        "mascot": "Chuck the Condor",
+        "head_coach": "Tyronn Lue",
+        "owners": [
+            {
+                "owner_id": 12,
+                "owner_name": "Steve Ballmer"
+            }
+        ]
+    },
+    {
+        "team_id": 13,
+        "team_name": "Los Angeles Lakers",
+        "abbreviation": "LAL",
+        "location": "Los Angeles",
+        "arena_name": "Crypto.com Arena",
+        "established_year": 1948,
+        "championships_won": 17,
+        "conference_titles": 19,
+        "division_titles": 33,
+        "all_time_wins": 3552,
+        "all_time_win_percentage": 0.591,
+        "mascot": null,
+        "head_coach": "JJ Redick",
+        "owners": [
+            {
+                "owner_id": 13,
+                "owner_name": "Jeanie Buss"
+            }
+        ]
+    },
+    {
+        "team_id": 14,
+        "team_name": "Memphis Grizzlies",
+        "abbreviation": "MEM",
+        "location": "Memphis",
+        "arena_name": "FedExForum",
+        "established_year": 1995,
+        "championships_won": 0,
+        "conference_titles": 0,
+        "division_titles": 2,
+        "all_time_wins": 999,
+        "all_time_win_percentage": 0.432,
+        "mascot": "Grizz",
+        "head_coach": "Taylor Jenkins",
+        "owners": [
+            {
+                "owner_id": 14,
+                "owner_name": "Robert Pera"
+            }
+        ]
+    },
+    {
+        "team_id": 15,
+        "team_name": "Miami Heat",
+        "abbreviation": "MIA",
+        "location": "Miami",
+        "arena_name": "Kaseya Center",
+        "established_year": 1988,
+        "championships_won": 3,
+        "conference_titles": 7,
+        "division_titles": 16,
+        "all_time_wins": 1521,
+        "all_time_win_percentage": 0.527,
+        "mascot": "Burnie",
+        "head_coach": "Erik Spoelstra",
+        "owners": [
+            {
+                "owner_id": 15,
+                "owner_name": "Micky Arison"
+            }
+        ]
+    },
+    {
+        "team_id": 16,
+        "team_name": "Milwaukee Bucks",
+        "abbreviation": "MIL",
+        "location": "Milwaukee",
+        "arena_name": "Fiserv Forum",
+        "established_year": 1968,
+        "championships_won": 2,
+        "conference_titles": 3,
+        "division_titles": 19,
+        "all_time_wins": 2390,
+        "all_time_win_percentage": 0.528,
+        "mascot": "Bango",
+        "head_coach": "Doc Rivers",
+        "owners": [
+            {
+                "owner_id": 16,
+                "owner_name": "Wesley Edens"
+            }
+        ]
+    },
+    {
+        "team_id": 17,
+        "team_name": "Minnesota Timberwolves",
+        "abbreviation": "MIN",
+        "location": "Minneapolis",
+        "arena_name": "Target Center",
+        "established_year": 1989,
+        "championships_won": 0,
+        "conference_titles": 0,
+        "division_titles": 1,
+        "all_time_wins": 1148,
+        "all_time_win_percentage": 0.411,
+        "mascot": "Crunch the Wolf",
+        "head_coach": "Chris Finch",
+        "owners": [
+            {
+                "owner_id": 17,
+                "owner_name": "Glen Taylor"
+            }
+        ]
+    },
+    {
+        "team_id": 18,
+        "team_name": "New Orleans Pelicans",
+        "abbreviation": "NOP",
+        "location": "New Orleans",
+        "arena_name": "Smoothie King Center",
+        "established_year": 2002,
+        "championships_won": 0,
+        "conference_titles": 0,
+        "division_titles": 1,
+        "all_time_wins": 833,
+        "all_time_win_percentage": 0.471,
+        "mascot": "Pierre the Pelican",
+        "head_coach": "Willie Green",
+        "owners": [
+            {
+                "owner_id": 18,
+                "owner_name": "Gayle Benson"
+            }
+        ]
+    },
+    {
+        "team_id": 19,
+        "team_name": "New York Knicks",
+        "abbreviation": "NYK",
+        "location": "New York City",
+        "arena_name": "Madison Square Garden",
+        "established_year": 1946,
+        "championships_won": 2,
+        "conference_titles": 4,
+        "division_titles": 8,
+        "all_time_wins": 2975,
+        "all_time_win_percentage": 0.487,
+        "mascot": null,
+        "head_coach": "Tom Thibodeau",
+        "owners": [
+            {
+                "owner_id": 19,
+                "owner_name": "Jim Dolan"
+            }
+        ]
+    },
+    {
+        "team_id": 20,
+        "team_name": "Oklahoma City Thunder",
+        "abbreviation": "OKC",
+        "location": "Oklahoma City",
+        "arena_name": "Paycom Center",
+        "established_year": 1967,
+        "championships_won": 1,
+        "conference_titles": 4,
+        "division_titles": 12,
+        "all_time_wins": 2471,
+        "all_time_win_percentage": 0.536,
+        "mascot": "Rumble the Bison",
+        "head_coach": "Mark Daigneault",
+        "owners": [
+            {
+                "owner_id": 20,
+                "owner_name": "Clay Bennett"
+            }
+        ]
+    },
+    {
+        "team_id": 21,
+        "team_name": "Orlando Magic",
+        "abbreviation": "ORL",
+        "location": "Orlando",
+        "arena_name": "Kia Center",
+        "established_year": 1989,
+        "championships_won": 0,
+        "conference_titles": 2,
+        "division_titles": 7,
+        "all_time_wins": 1317,
+        "all_time_win_percentage": 0.470,
+        "mascot": "Stuff the Magic Dragon",
+        "head_coach": "Jamahl Mosley",
+        "owners": [
+            {
+                "owner_id": 21,
+                "owner_name": "Dan DeVos"
+            }
+        ]
+    },
+    {
+        "team_id": 22,
+        "team_name": "Philadelphia 76ers",
+        "abbreviation": "PHI",
+        "location": "Philadelphia",
+        "arena_name": "Wells Fargo Center",
+        "established_year": 1949,
+        "championships_won": 3,
+        "conference_titles": 5,
+        "division_titles": 12,
+        "all_time_wins": 3101,
+        "all_time_win_percentage": 0.522,
+        "mascot": "Franklin",
+        "head_coach": "Nick Nurse",
+        "owners": [
+            {
+                "owner_id": 22,
+                "owner_name": "Joshua Harris"
+            },
+            {
+                "owner_id": 23,
+                "owner_name": "David Blitzer"
+            }
+        ]
+    },
+    {
+        "team_id": 23,
+        "team_name": "Phoenix Suns",
+        "abbreviation": "PHX",
+        "location": "Phoenix",
+        "arena_name": "Footprint Center",
+        "established_year": 1968,
+        "championships_won": 0,
+        "conference_titles": 3,
+        "division_titles": 8,
+        "all_time_wins": 2430,
+        "all_time_win_percentage": 0.537,
+        "mascot": "The Gorilla",
+        "head_coach": "Mike Budenholzer",
+        "owners": [
+            {
+                "owner_id": 24,
+                "owner_name": "Mat Ishbia"
+            }
+        ]
+    },
+    {
+        "team_id": 24,
+        "team_name": "Portland Trail Blazers",
+        "abbreviation": "POR",
+        "location": "Portland",
+        "arena_name": "Moda Center",
+        "established_year": 1970,
+        "championships_won": 1,
+        "conference_titles": 3,
+        "division_titles": 6,
+        "all_time_wins": 2292,
+        "all_time_win_percentage": 0.525,
+        "mascot": "Blaze the Trail Cat",
+        "head_coach": "Chauncey Billups",
+        "owners": [
+            {
+                "owner_id": 25,
+                "owner_name": "Jody Allen"
+            }
+        ]
+    },
+    {
+        "team_id": 25,
+        "team_name": "Sacramento Kings",
+        "abbreviation": "SAC",
+        "location": "Sacramento",
+        "arena_name": "Golden 1 Center",
+        "established_year": 1948,
+        "championships_won": 1,
+        "conference_titles": 0,
+        "division_titles": 6,
+        "all_time_wins": 2748,
+        "all_time_win_percentage": 0.458,
+        "mascot": "Slamson the Lion",
+        "head_coach": "Mike Brown",
+        "owners": [
+            {
+                "owner_id": 26,
+                "owner_name": "Vivek Ranadive"
+            }
+        ]
+    },
+    {
+        "team_id": 26,
+        "team_name": "San Antonio Spurs",
+        "abbreviation": "SAS",
+        "location": "San Antonio",
+        "arena_name": "Frost Bank Center",
+        "established_year": 1976,
+        "championships_won": 5,
+        "conference_titles": 6,
+        "division_titles": 22,
+        "all_time_wins": 2683,
+        "all_time_win_percentage": 0.582,
+        "mascot": "Coyote",
+        "head_coach": "Gregg Popovich",
+        "owners": [
+            {
+                "owner_id": 27,
+                "owner_name": "Peter Holt"
+            }
+        ]
+    },
+    {
+        "team_id": 27,
+        "team_name": "Toronto Raptors",
+        "abbreviation": "TOR",
+        "location": "Toronto",
+        "arena_name": "Scotiabank Arena",
+        "established_year": 1995,
+        "championships_won": 1,
+        "conference_titles": 1,
+        "division_titles": 7,
+        "all_time_wins": 1097,
+        "all_time_win_percentage": 0.474,
+        "mascot": "The Raptor",
+        "head_coach": "Darko Rajakovic",
+        "owners": [
+            {
+                "owner_id": 28,
+                "owner_name": "Lawrence Tanenbaum"
+            }
+        ]
+    },
+    {
+        "team_id": 28,
+        "team_name": "Utah Jazz",
+        "abbreviation": "UTA",
+        "location": "Salt Lake City",
+        "arena_name": "Delta Center",
+        "established_year": 1974,
+        "championships_won": 0,
+        "conference_titles": 2,
+        "division_titles": 11,
+        "all_time_wins": 2177,
+        "all_time_win_percentage": 0.540,
+        "mascot": "Jazz Bear",
+        "head_coach": "Will Hardy",
+        "owners": [
+            {
+                "owner_id": 29,
+                "owner_name": "Ryan Smith"
+            }
+        ]
+    },
+    {
+        "team_id": 29,
+        "team_name": "Washington Wizards",
+        "abbreviation": "WAS",
+        "location": "Washington, D.C.",
+        "arena_name": "Capital One Arena",
+        "established_year": 1961,
+        "championships_won": 1,
+        "conference_titles": 4,
+        "division_titles": 8,
+        "all_time_wins": 2272,
+        "all_time_win_percentage": 0.447,
+        "mascot": "G-Wiz",
+        "head_coach": "Brian Keefe",
+        "owners": [
+            {
+                "owner_id": 30,
+                "owner_name": "Ted Leonsis"
+            }
+        ]
+    }
+]
