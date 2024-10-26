@@ -4,7 +4,6 @@ Ovaj skup podataka sadrži informacije o NBA timovima, uključujući njihove osn
 
 ## Metapodaci
 
-- **Licenca:** Ovaj skup podataka je objavljen pod Creative Commons licencom [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). Korisnici mogu slobodno koristiti, dijeliti i prilagođavati podatke bez ikakvih ograničenja.
 - **Autor:** Fran Blažević
 - **Verzija skupa podataka:** 1.0
 - **Jezik podataka:** Engleski
@@ -40,4 +39,8 @@ Podaci su dostupni u [JSON](nba-teams.json) i [CSV](nba-teams.csv) formatu, a mo
 
 [Latest release](https://github.com/fran-bl/nba-teams-dataset/releases/latest)
 
-- [Release 1.0]()
+- [Release v1.0](https://github.com/fran-bl/nba-teams-dataset/releases/tag/v1.0)
+
+## Licenca
+
+Ovaj skup podataka je objavljen pod Creative Commons licencom [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). Korisnici mogu slobodno koristiti, dijeliti i prilagođavati podatke bez ikakvih ograničenja.
