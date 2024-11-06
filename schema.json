@@ -1,0 +1,124 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/schema.json",
+    "type": "array",
+    "default": [],
+    "title": "NBA Teams",
+    "description": "Schema za prikaz podataka o NBA timovima, uključujući osnovne informacije, postignuća i vlasnike.",
+    "items": {
+        "type": "object",
+        "title": "nba_team",
+        "description": "Objekt koji sadrži sve podatke o jednom NBA timu.",
+        "required": [
+            "team_id",
+            "team_name",
+            "abbreviation",
+            "location",
+            "arena_name",
+            "established_year",
+            "championships_won",
+            "conference_titles",
+            "division_titles",
+            "all_time_wins",
+            "all_time_win_percentage",
+            "mascot",
+            "head_coach",
+            "owners"
+        ],
+        "properties": {
+            "team_id": {
+                "type": "integer",
+                "title": "Jedinstveni identifikator tima",
+                "description": "Jedinstveni identifikator za svaki tim"
+            },
+            "team_name": {
+                "type": "string",
+                "title": "Ime tima",
+                "description": "Puni naziv NBA tima"
+            },
+            "abbreviation": {
+                "type": "string",
+                "title": "Skraćenica",
+                "description": "Skraćeni naziv tima (npr. BOS za Boston Celtics)"
+            },
+            "location": {
+                "type": "string",
+                "title": "Lokacija tima",
+                "description": "Grad ili mjesto gdje tim igra"
+            },
+            "arena_name": {
+                "type": "string",
+                "title": "Naziv arene",
+                "description": "Naziv arene u kojoj tim igra domaće utakmice"
+            },
+            "established_year": {
+                "type": "integer",
+                "title": "Godina osnivanja",
+                "description": "Godina kada je tim osnovan"
+            },
+            "championships_won": {
+                "type": "integer",
+                "title": "Osvojeni naslovi",
+                "description": "Ukupan broj osvojenih NBA prvenstava"
+            },
+            "conference_titles": {
+                "type": "integer",
+                "title": "Konferencijski naslovi",
+                "description": "Ukupan broj osvojenih naslova u konferenciji"
+            },
+            "division_titles": {
+                "type": "integer",
+                "title": "Divizijski naslovi",
+                "description": "Ukupan broj osvojenih divizijskih naslova"
+            },
+            "all_time_wins": {
+                "type": "integer",
+                "title": "Ukupne pobjede",
+                "description": "Ukupan broj pobjeda tima kroz povijest"
+            },
+            "all_time_win_percentage": {
+                "type": "number",
+                "title": "Postotak pobjeda",
+                "description": "Postotak pobjeda tima kroz povijest"
+            },
+            "mascot": {
+                "type": [
+                    "string",
+                    "null"
+                ],
+                "title": "Maskota",
+                "description": "Ime maskote tima, ako postoji"
+            },
+            "head_coach": {
+                "type": "string",
+                "title": "Trener",
+                "description": "Ime trenutnog trenera tima"
+            },
+            "owners": {
+                "type": "array",
+                "title": "Vlasnici",
+                "description": "Lista vlasnika tima",
+                "items": {
+                    "type": "object",
+                    "title": "Vlasnik",
+                    "required": [
+                        "owner_id",
+                        "owner_name"
+                    ],
+                    "properties": {
+                        "owner_id": {
+                            "type": "integer",
+                            "title": "Jedinstveni identifikator vlasnika",
+                            "description": "Jedinstveni identifikator svakog vlasnika"
+                        },
+                        "owner_name": {
+                            "type": "string",
+                            "title": "Ime vlasnika",
+                            "description": "Ime i prezime vlasnika"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NBA Teams Table</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>NBA Teams</h1>
+    <form id="filterForm">
+        <input type="text" id="search" placeholder="Pretraži timove">
+        <select id="attribute">
+            <option value="wildcard">Sva polja (wildcard)</option>
+            <option value="team_name">Ime tima</option>
+            <option value="abbreviation">Skraćenica</option>
+            <option value="location">Lokacija</option>
+            <option value="arena_name">Arena</option>
+            <option value="established_year">Godina osnivanja</option>
+            <option value="championships_won">Prvenstva</option>
+            <option value="conference_titles">Konferencijski naslovi</option>
+            <option value="division_titles">Divizijski naslovi</option>
+            <option value="all_time_wins">Ukupno pobjeda</option>
+            <option value="all_time_win_percentage">Postotak pobjeda</option>
+            <option value="mascot">Maskota</option>
+            <option value="head_coach">Trener</option>
+            <option value="owners">Vlasnici</option>
+        </select>
+        <button type="submit">Pretraži</button>
+        <button id="jsonDownloadBtn">Preuzmi filtrirane podatke u JSON formatu</button>
+        <button id="csvDownloadBtn">Preuzmi filtrirane podatke u CSV formatu</button>
+    </form>
+    
+    <table id="teamsTable">
+        <thead>
+            <tr>
+                <th>Ime tima</th>
+                <th>Skraćenica</th>
+                <th>Lokacija</th>
+                <th>Arena</th>
+                <th>Godina osnivanja</th>
+                <th>Prvenstva</th>
+                <th>Konferencijski naslovi</th>
+                <th>Divizijski naslovi</th>
+                <th>Ukupno pobjeda</th>
+                <th>Postotak pobjeda</th>
+                <th>Maskota</th>
+                <th>Trener</th>
+                <th>Vlasnici</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>

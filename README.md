@@ -12,15 +12,16 @@ Ovaj skup podataka sadrži informacije o NBA timovima, uključujući njihove osn
   - `team_id`: Jedinstveni identifikator tima.
   - `team_name`: Ime tima.
   - `abbreviation`: Skraćenica tima (npr. BOS za Boston Celtics).
-  - `foundation_year`: Godina kada je tim osnovan.
-  - `location_id`: Identifikator lokacije tima.
-  - `arena_id`: Identifikator arene u kojoj tim igra.
+  - `established_year`: Godina kada je tim osnovan.
+  - `location`: Lokacija tima.
+  - `arena_name`: Naziv arene u kojoj tim igra.
   - `championships_won`: Broj osvojenih naslova prvaka.
   - `conference_titles`: Broj osvojenih konferencijskih naslova.
   - `division_titles`: Broj osvojenih divizijskih naslova.
   - `all_time_wins`: Ukupni broj pobjeda tima u povijesti.
   - `all_time_win_percentage`: Postotak pobjeda tima tijekom cijele povijesti.
-  - `coach_name`: Ime trenera tima.
+  - `head_coach`: Ime trenera tima.
+  - `mascot`: Ime maskote tima.
   - `owners`: Lista vlasnika tima.
     - `owner_id`: Jedinstveni identifikator vlasnika.
     - `owner_name`: Ime vlasnika.
