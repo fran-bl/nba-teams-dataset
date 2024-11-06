@@ -2,11 +2,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>NBA Teams Table</title>
+    <title>NBA Teams Dataset</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko">
 </head>
 <body>
-    <h1>NBA Teams</h1>
+    <h1>NBA Teams Dataset</h1>
     <form id="filterForm">
         <input type="text" id="search" placeholder="Pretraži timove">
         <select id="attribute">
@@ -25,9 +26,11 @@
             <option value="head_coach">Trener</option>
             <option value="owners">Vlasnici</option>
         </select>
-        <button type="submit">Pretraži</button>
-        <button id="jsonDownloadBtn">Preuzmi filtrirane podatke u JSON formatu</button>
-        <button id="csvDownloadBtn">Preuzmi filtrirane podatke u CSV formatu</button>
+        <button type="submit" class="button-59">Pretraži</button>
+        <div style="margin-top: 2rem;">
+            <button id="jsonDownloadBtn" class="button-59">Preuzmi filtrirane podatke u JSON formatu</button>
+            <button id="csvDownloadBtn" class="button-59">Preuzmi filtrirane podatke u CSV formatu</button>
+        </div>
     </form>
     
     <table id="teamsTable">
