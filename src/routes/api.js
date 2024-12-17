@@ -1,4 +1,6 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 const router = express.Router();
 const db = require('../db');
 
@@ -474,6 +476,188 @@ router.get('/teams/download/csv', async (req, res) => {
         res.status(500).send('Greška na serveru');
     }
 });
+
+/* JAVNI API POCETAK */
+
+router.get('/data', async (req, res) => {
+    try {
+        query = `
+            WITH temp_teams AS (
+                SELECT
+                    t.team_id,
+                    t.team_name,
+                    t.abbreviation,
+                    t.location,
+                    t.arena_name,
+                    t.established_year,
+                    t.championships_won,
+                    t.conference_titles,
+                    t.division_titles,
+                    t.all_time_wins,
+                    t.all_time_win_percentage,
+                    t.mascot,
+                    t.head_coach,
+                    STRING_AGG(o.owner_name, ', ') as owners
+                FROM nba_teams t JOIN owners o ON t.team_id = o.team_id
+                GROUP BY t.team_id, t.team_name
+            )
+            SELECT * FROM temp_teams
+            ORDER BY team_id
+        `;
+        result = await db.query(query);
+        return res.status(200).json(responseWrapper('OK', 'Fetched all data', result.rows));
+    } catch (err) {
+        return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
+    }
+});
+
+router.get('/team/:id', async (req, res) => {
+    const teamId = parseInt(req.params.id);
+
+    try {
+        query = `
+            WITH temp_teams AS (
+                SELECT
+                    t.team_id,
+                    t.team_name,
+                    t.abbreviation,
+                    t.location,
+                    t.arena_name,
+                    t.established_year,
+                    t.championships_won,
+                    t.conference_titles,
+                    t.division_titles,
+                    t.all_time_wins,
+                    t.all_time_win_percentage,
+                    t.mascot,
+                    t.head_coach,
+                    STRING_AGG(o.owner_name, ', ') as owners
+                FROM nba_teams t JOIN owners o ON t.team_id = o.team_id
+                GROUP BY t.team_id, t.team_name
+            )
+            SELECT * FROM temp_teams
+            WHERE team_id = $1
+            ORDER BY team_id
+        `;
+        result = await db.query(query, [`${teamId}`]);
+
+        if (result.rowCount === 0) {
+            return res.status(404).json(responseWrapper('Not Found', 'Team with provided ID does not exist', null));
+        }
+        return res.status(200).json(responseWrapper('OK', 'Fetched team', result.rows));
+    } catch (err) {
+        return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
+    }
+});
+
+router.get('/owners', async (req, res) => {
+    try {
+        query = `SELECT * FROM owners`;
+        result = await db.query(query);
+        return res.status(200).json(responseWrapper('OK', 'Fetched all owners', result.rows));
+    } catch (err) {
+        return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
+    }
+});
+
+router.get('/mascots', async (req, res) => {
+    try {
+        query = `SELECT mascot FROM nba_teams WHERE mascot IS NOT NULL`;
+        result = await db.query(query);
+        return res.status(200).json(responseWrapper('OK', 'Fetched all mascots', result.rows));
+    } catch (err) {
+        return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
+    }
+});
+
+router.get('/arenas', async (req, res) => {
+    try {
+        query = `SELECT arena_name FROM nba_teams`;
+        result = await db.query(query);
+        return res.status(200).json(responseWrapper('OK', 'Fetched all arenas', result.rows));
+    } catch (err) {
+        return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
+    }
+});
+
+router.post('/add-owner', async (req, res) => {
+    const { owner_id, team_id, owner_name } = req.body;
+
+    try {
+        query = `INSERT INTO owners VALUES ($1, $2, $3)`;
+        result = await db.query(query, [owner_id, team_id, owner_name]);
+        return res.status(200).json(responseWrapper('OK', 'Inserted owner', result.rowCount));
+    } catch (err) {
+        return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
+    }
+});
+
+router.put('/update-team/:id', async (req, res) => {
+    const teamId = parseInt(req.params.id);
+    const { column, value } = req.body;
+
+    try {
+        query = `UPDATE nba_teams SET ${column} = $2 WHERE team_id = $1 RETURNING team_id, ${column}`;
+        result = await db.query(query, [teamId, value]);
+
+        if (result.rowCount === 0) {
+            return res.status(404).json(responseWrapper('Not Found', 'Team with provided ID does not exist', null));
+        }
+        return res.status(200).json(responseWrapper('OK', 'Updated team', result.rowCount));
+    } catch (err) {
+        return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
+    }
+});
+
+router.delete('/delete-owner/:id', async (req, res) => {
+    const ownerId = parseInt(req.params.id);
+
+    try {
+        query = `DELETE FROM owners WHERE owner_id  = $1 RETURNING owner_id`;
+        result = await db.query(query, [ownerId]);
+
+        if (result.rowCount === 0) {
+            return res.status(404).json(responseWrapper('Not Found', 'Owner with provided ID does not exist', null));
+        }
+
+        return res.status(200).json(responseWrapper('OK', 'Deleted owner', result.rowCount));
+    } catch (err) {
+        return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
+    }
+});
+
+router.get('/openapi', async (req, res) => {
+    const openApiPath = path.join(__dirname, '../../openapi.json');
+
+    fs.readFile(openApiPath, 'utf8', (err, data) => {
+        if (err) {
+          return res.status(500).json(responseWrapper('Internal Server Error', 'Failed to load OpenAPI specification', null));
+        }
+    
+        try {
+          const openApiSpec = JSON.parse(data);
+          res.setHeader('Content-Type', 'application/json');
+          return res.status(200).json(responseWrapper('OK', 'Fetched OpenAPI specification', openApiSpec));
+        } catch (parseErr) {
+          return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
+        }
+      });
+});
+
+router.all('*', (req, res) => {
+    return res.status(501).json(responseWrapper('Not Implemented', 'Method not implemented for requested resource', null));
+});
+
+/* JAVNI API KRAJ */
+
+function responseWrapper(status, message, data) {
+    return {
+        status: status,
+        message: message,
+        response: data,
+        timestamp: new Date().toISOString()
+    };
+}
 
 function resultToCsv(result) {
     const headers = result.fields.map(field => field.name);

@@ -40,6 +40,7 @@ Podaci su dostupni u [JSON](nba-teams.json) i [CSV](nba-teams.csv) formatu, a mo
 
 [Latest release](https://github.com/fran-bl/nba-teams-dataset/releases/latest)
 
+- [Release v3.0](https://github.com/fran-bl/nba-teams-dataset/releases/tag/v3.0)
 - [Release v2.0](https://github.com/fran-bl/nba-teams-dataset/releases/tag/v2.0)
 - [Release v1.0](https://github.com/fran-bl/nba-teams-dataset/releases/tag/v1.0)
 
