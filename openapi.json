@@ -15,7 +15,7 @@
         }
     },
     "paths": {
-        "/data": {
+        "/teams": {
             "get": {
                 "summary": "Get the whole collection of NBA teams",
                 "description": "Returns all rows from nba_teams table",
@@ -35,7 +35,7 @@
                 }
             }
         },
-        "/team/{id}": {
+        "/teams/{id}": {
             "get": {
                 "summary": "Get team from collection by ID",
                 "description": "Returns a single collection resource",
@@ -66,117 +66,8 @@
                         "description": "Internal Server Error"
                     }
                 }
-            }
-        },
-        "/owners": {
-            "get": {
-                "summary": "Get the whole collection of team owners",
-                "description": "Returns all rows from owners table",
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Fetched all owners",
-                        "schema": {
-                            "$ref": "#/components/schemas/Owners"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error"
-                    }
-                }
-            }
-        },
-        "/mascots": {
-            "get": {
-                "summary": "Get the whole collection of team mascots",
-                "description": "Returns all mascots from nba_teams table",
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Fetched all mascots",
-                        "schema": {
-                            "$ref": "#/components/schemas/Mascots"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error"
-                    }
-                }
-            }
-        },
-        "/arenas": {
-            "get": {
-                "summary": "Get the whole collection of arenas",
-                "description": "Returns all arenas from nba_teams table",
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Fetched all arenas",
-                        "schema": {
-                            "$ref": "#/components/schemas/Arenas"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error"
-                    }
-                }
-            }
-        },
-        "/add-owner": {
-            "post": {
-                "summary": "Add owner to the database",
-                "description": "Inserts a new owner into owners table",
-                "produces": [
-                    "application/json"
-                ],
-                "requestBody": {
-                    "description": "Data to create new owner",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "owner_id": {
-                                        "type": "integer",
-                                        "description": "ID of new owner"
-                                    },
-                                    "team_id": {
-                                        "type": "integer",
-                                        "description": "ID of existing team"
-                                    },
-                                    "owner_name": {
-                                        "type": "string",
-                                        "description": "Name of new owner"
-                                    }
-                                },
-                                "required": [
-                                    "owner_id",
-                                    "team_id",
-                                    "owner_name"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Inserted owner"
-                    },
-                    "500": {
-                        "description": "Internal Server Error"
-                    }
-                }
-            }
-        },
-        "/update-team/{id}": {
-            "post": {
+            },
+            "put": {
                 "summary": "Update existing team by ID",
                 "description": "Updates an existing team in nba_teams table",
                 "produces": [
@@ -242,7 +133,112 @@
                 }
             }
         },
-        "/delete-owner/{id}": {
+        "/owners": {
+            "get": {
+                "summary": "Get the whole collection of team owners",
+                "description": "Returns all rows from owners table",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetched all owners",
+                        "schema": {
+                            "$ref": "#/components/schemas/Owners"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add owner to the database",
+                "description": "Inserts a new owner into owners table",
+                "produces": [
+                    "application/json"
+                ],
+                "requestBody": {
+                    "description": "Data to create new owner",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "owner_id": {
+                                        "type": "integer",
+                                        "description": "ID of new owner"
+                                    },
+                                    "team_id": {
+                                        "type": "integer",
+                                        "description": "ID of existing team"
+                                    },
+                                    "owner_name": {
+                                        "type": "string",
+                                        "description": "Name of new owner"
+                                    }
+                                },
+                                "required": [
+                                    "owner_id",
+                                    "team_id",
+                                    "owner_name"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Inserted owner"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/mascots": {
+            "get": {
+                "summary": "Get the whole collection of team mascots",
+                "description": "Returns all mascots from nba_teams table",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetched all mascots",
+                        "schema": {
+                            "$ref": "#/components/schemas/Mascots"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/arenas": {
+            "get": {
+                "summary": "Get the whole collection of arenas",
+                "description": "Returns all arenas from nba_teams table",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetched all arenas",
+                        "schema": {
+                            "$ref": "#/components/schemas/Arenas"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/owners/{id}": {
             "delete": {
                 "summary": "Delete existing owner by ID",
                 "description": "Deletes existing owner by ID from owners table",

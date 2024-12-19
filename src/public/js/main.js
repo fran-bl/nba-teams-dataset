@@ -11,14 +11,14 @@ document.getElementById('jsonDownloadBtn').addEventListener('click', () => {
     const search = document.getElementById('search').value;
     const attribute = document.getElementById('attribute').value;
 
-    window.location.href = `/api/teams/download/json?search=${search}&attribute=${attribute}`;
+    window.location.href = `/api/data/download/json?search=${search}&attribute=${attribute}`;
 });
 
 document.getElementById('csvDownloadBtn').addEventListener('click', () => {
     const search = document.getElementById('search').value;
     const attribute = document.getElementById('attribute').value;
 
-    window.location.href = `/api/teams/download/csv?search=${search}&attribute=${attribute}`;
+    window.location.href = `/api/data/download/csv?search=${search}&attribute=${attribute}`;
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function fetchTeams(search = '', attribute = 'team_name') {
-    const response = await fetch(`/api/teams?search=${search}&attribute=${attribute}`);
+    const response = await fetch(`/api/data?search=${search}&attribute=${attribute}`);
     const teams = await response.json();
 
     const tbody = document.getElementById('teamsTable').getElementsByTagName('tbody')[0];

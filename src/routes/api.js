@@ -4,7 +4,7 @@ const path = require('path');
 const router = express.Router();
 const db = require('../db');
 
-router.get('/teams', async (req, res) => {
+router.get('/data', async (req, res) => {
     const search = req.query.search;
     const attribute = req.query.attribute;
     
@@ -148,7 +148,7 @@ router.get('/teams', async (req, res) => {
     }
 });
 
-router.get('/teams/download/json', async (req, res) => {
+router.get('/data/download/json', async (req, res) => {
     const search = req.query.search;
     const attribute = req.query.attribute;
 
@@ -331,7 +331,7 @@ router.get('/teams/download/json', async (req, res) => {
     }
 });
 
-router.get('/teams/download/csv', async (req, res) => {
+router.get('/data/download/csv', async (req, res) => {
     const search = req.query.search;
     const attribute = req.query.attribute;
 
@@ -479,7 +479,7 @@ router.get('/teams/download/csv', async (req, res) => {
 
 /* JAVNI API POCETAK */
 
-router.get('/data', async (req, res) => {
+router.get('/teams', async (req, res) => {
     try {
         query = `
             WITH temp_teams AS (
@@ -511,7 +511,7 @@ router.get('/data', async (req, res) => {
     }
 });
 
-router.get('/team/:id', async (req, res) => {
+router.get('/teams/:id', async (req, res) => {
     const teamId = parseInt(req.params.id);
 
     try {
@@ -580,7 +580,7 @@ router.get('/arenas', async (req, res) => {
     }
 });
 
-router.post('/add-owner', async (req, res) => {
+router.post('/owners', async (req, res) => {
     const { owner_id, team_id, owner_name } = req.body;
 
     try {
@@ -592,7 +592,7 @@ router.post('/add-owner', async (req, res) => {
     }
 });
 
-router.put('/update-team/:id', async (req, res) => {
+router.put('/teams/:id', async (req, res) => {
     const teamId = parseInt(req.params.id);
     const { column, value } = req.body;
 
@@ -609,7 +609,7 @@ router.put('/update-team/:id', async (req, res) => {
     }
 });
 
-router.delete('/delete-owner/:id', async (req, res) => {
+router.delete('/owners/:id', async (req, res) => {
     const ownerId = parseInt(req.params.id);
 
     try {
