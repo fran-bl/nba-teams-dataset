@@ -10,6 +10,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko">
 </head>
 <body>
+    <div class="auth-container">
+        <% if (isAuthenticated) { %>
+            <img src="<%= user.picture %>" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 50%;">
+            <a href="/profile"><button class="button-59">Korisnički profil</button></a>
+            <a href="/refresh-data"><button class="button-59">Osvježi preslike</button></a>
+            <a href="/logout"><button class="button-59">Logout</button></a>
+        <% } else { %>
+            <a href="/login"><button class="button-59">Login</button></a>
+        <% } %>
+    </div>
+
     <h1>NBA Teams Dataset</h1>
     <p>Ovaj skup podataka sadrži informacije o NBA timovima, uključujući njihove osnovne podatke, povijest, postignuća, trenere i vlasnike. Podaci su organizirani u relacijske tablice koje omogućuju analizu i usporedbu timova na temelju različitih atributa.</p>
     <p>Ovdje možete preuzeti podatke o NBA timovima:</p>
@@ -20,7 +31,7 @@
         </ul>
     </div>
     <div style="text-align: center;">
-        <a href="datatable.html">
+        <a href="/datatable">
             <button class="button-59" role="button">Pogledaj tablični prikaz</button>
         </a>
     </div>
