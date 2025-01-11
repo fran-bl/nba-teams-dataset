@@ -505,7 +505,7 @@ router.get('/teams', async (req, res) => {
             ORDER BY team_id
         `;
         result = await db.query(query);
-        return res.status(200).json(responseWrapper('OK', 'Fetched all data', result.rows));
+        return res.status(200).json(responseWrapper('OK', 'Fetched all data', mapTeamsToJLD(result.rows)));
     } catch (err) {
         return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
     }
@@ -544,7 +544,7 @@ router.get('/teams/:id', async (req, res) => {
         if (result.rowCount === 0) {
             return res.status(404).json(responseWrapper('Not Found', 'Team with provided ID does not exist', null));
         }
-        return res.status(200).json(responseWrapper('OK', 'Fetched team', result.rows));
+        return res.status(200).json(responseWrapper('OK', 'Fetched team', mapTeamToJLD(result.rows[0])));
     } catch (err) {
         return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
     }
@@ -554,7 +554,23 @@ router.get('/owners', async (req, res) => {
     try {
         query = `SELECT * FROM owners`;
         result = await db.query(query);
-        return res.status(200).json(responseWrapper('OK', 'Fetched all owners', result.rows));
+        return res.status(200).json(responseWrapper('OK', 'Fetched all owners', mapOwnersToJLD(result.rows)));
+    } catch (err) {
+        return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
+    }
+});
+
+router.get('/owners/:id', async (req, res) => {
+    const ownerId = parseInt(req.params.id);
+
+    try {
+        query = `SELECT * FROM owners WHERE owner_id = $1`;
+        result = await db.query(query, [`${ownerId}`]);
+
+        if (result.rowCount === 0) {
+            return res.status(404).json(responseWrapper('Not Found', 'Owner with provided ID does not exist', null));
+        }
+        return res.status(200).json(responseWrapper('OK', 'Fetched owner', mapOwnerToJLD(result.rows[0])));
     } catch (err) {
         return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
     }
@@ -562,9 +578,9 @@ router.get('/owners', async (req, res) => {
 
 router.get('/mascots', async (req, res) => {
     try {
-        query = `SELECT mascot FROM nba_teams WHERE mascot IS NOT NULL`;
+        query = `SELECT mascot AS name FROM nba_teams WHERE mascot IS NOT NULL`;
         result = await db.query(query);
-        return res.status(200).json(responseWrapper('OK', 'Fetched all mascots', result.rows));
+        return res.status(200).json(responseWrapper('OK', 'Fetched all mascots', mapMascotsToJLD(result.rows)));
     } catch (err) {
         return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
     }
@@ -574,7 +590,7 @@ router.get('/arenas', async (req, res) => {
     try {
         query = `SELECT arena_name FROM nba_teams`;
         result = await db.query(query);
-        return res.status(200).json(responseWrapper('OK', 'Fetched all arenas', result.rows));
+        return res.status(200).json(responseWrapper('OK', 'Fetched all arenas', mapArenasToJLD(result.rows)));
     } catch (err) {
         return res.status(500).json(responseWrapper('Internal Server Error', err.message, null));
     }
@@ -674,6 +690,95 @@ function resultToCsv(result) {
     });
 
     return csvRows.join('\n');
+}
+
+function mapTeamToJLD(team) {
+    return {
+        '@context': {
+            '@vocab': 'https://schema.org',
+            'city': 'address',
+            'homeVenue': 'location',
+            'owners': 'parentOrganization',
+            'mascot': 'https://example.com/vocab#mascot',
+            'awards': 'https://example.com/vocab#awards',
+            'rating': 'https://example.com/vocab#rating',
+        },
+        '@type': 'SportsTeam',
+        '@id': `/api/teams/${team.team_id}`,
+        'name': team.team_name,
+        'alternateName': team.abbreviation,
+        'city': {
+            '@type': 'PostalAddress',
+            'addressRegion': team.location,
+        },
+        'homeVenue': {
+            '@type': 'Place',
+            'name': team.arena_name,
+        },
+        'foundingDate': team.established_year,
+        'awards': {
+            'championshipsWon': team.championships_won,
+            'conferenceTitles': team.conference_titles,
+            'divisionTitles': team.division_titles,
+        },
+        'rating': {
+            'wins': team.all_time_wins,
+            'winPercentage': team.all_time_win_percentage,
+        },
+        'mascot': {
+            '@type': 'Thing',
+            'name': team.mascot || 'None',
+        },
+        'coach': {
+            '@type': 'Person',
+            'name': team.head_coach,
+        },
+        'owners': {
+            '@type': 'Organization',
+            'employee': team.owners,
+        }
+    }
+}
+
+function mapTeamsToJLD(teams) {
+    return teams.map(mapTeamToJLD);
+}
+
+function mapOwnerToJLD(owner) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        '@id': `/api/owners/${owner.owner_id}`,
+        'name': owner.owner_name,
+        'owns': {
+            '@type': 'OwnershipInfo',
+            'identifier': owner.team_id,
+        }
+    }
+}
+
+function mapOwnersToJLD(owners) {
+    return owners.map(mapOwnerToJLD);
+}
+
+function mapMascotsToJLD(mascots) {
+    return mascots.map(m => {
+        return {
+            '@context': 'https://schema.org',
+            '@type': 'Thing',
+            'name': m.name,
+        };
+    });
+}
+
+function mapArenasToJLD(arenas) {
+    return arenas.map(a => {
+        return {
+            '@context': 'https://schema.org',
+            '@type': 'Place',
+            'name': a.arena_name,
+        };
+    });
 }
 
 module.exports = router;

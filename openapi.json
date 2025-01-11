@@ -239,6 +239,37 @@
             }
         },
         "/owners/{id}": {
+            "get": {
+                "summary": "Get owner from collection by ID",
+                "description": "Returns a single collection resource",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the owner",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetched owner",
+                        "schema": {
+                            "$ref": "#/components/schemas/Owner"
+                        }
+                    },
+                    "404": {
+                        "description": "Owner with provided ID does not exist"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
             "delete": {
                 "summary": "Delete existing owner by ID",
                 "description": "Deletes existing owner by ID from owners table",
@@ -291,63 +322,142 @@
             "Team": {
                 "type": "object",
                 "properties": {
-                    "team_id": {
-                        "type": "integer"
+                    "@context": {
+                        "type": "object",
+                        "properties": {
+                            "@vocab": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "homeVenue": {
+                                "type": "string"
+                            },
+                            "owners": {
+                                "type": "string"
+                            },
+                            "mascot": {
+                                "type": "string"
+                            },
+                            "awards": {
+                                "type": "string"
+                            },
+                            "rating": {
+                                "type": "string"
+                            }
+                        }
                     },
-                    "team_name": {
+                    "@type": {
                         "type": "string"
                     },
-                    "abbreviation": {
+                    "@id": {
                         "type": "string"
                     },
-                    "location": {
+                    "name": {
                         "type": "string"
                     },
-                    "arena_name": {
+                    "alternateName": {
                         "type": "string"
                     },
-                    "established_year": {
+                    "city": {
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string"
+                            },
+                            "addressRegion": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "homeVenue": {
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "foundingDate": {
                         "type": "integer"
                     },
-                    "championships_won": {
-                        "type": "integer"
+                    "awards": {
+                        "type": "object",
+                        "properties": {
+                            "championshipsWon": {
+                                "type": "integer"
+                            },
+                            "conferenceTitles": {
+                                "type": "integer"
+                            },
+                            "divisionTitles": {
+                                "type": "integer"
+                            }
+                        }
                     },
-                    "conference_titles": {
-                        "type": "integer"
-                    },
-                    "division_titles": {
-                        "type": "integer"
-                    },
-                    "all_time_wins": {
-                        "type": "integer"
-                    },
-                    "all_time_win_percentage": {
-                        "type": "number",
-                        "format": "float"
+                    "rating": {
+                        "type": "object",
+                        "properties": {
+                            "wins": {
+                                "type": "integer"
+                            },
+                            "winPercentage": {
+                                "type": "number",
+                                "format": "float"
+                            }
+                        }
                     },
                     "mascot": {
-                        "type": "string"
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
                     },
-                    "head_coach": {
-                        "type": "string"
+                    "coach": {
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
                     },
                     "owners": {
-                        "type": "string"
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string"
+                            },
+                            "employee": {
+                                "type": "string"
+                            }
+                        }
                     }
                 },
                 "required": [
-                    "team_id",
-                    "team_name",
-                    "abbreviation",
-                    "location",
-                    "arena_name",
-                    "established_year",
-                    "championships_won",
-                    "conference_titles",
-                    "division_titles",
-                    "all_time_wins",
-                    "all_time_win_percentage",
-                    "head_coach"
+                    "@context",
+                    "@type",
+                    "@id",
+                    "name",
+                    "alternateName",
+                    "homeVenue",
+                    "foundingDate",
+                    "awards",
+                    "rating",
+                    "mascot",
+                    "coach",
+                    "owners"
                 ]
             },
             "Teams": {
@@ -360,20 +470,36 @@
             "Owner": {
                 "type": "object",
                 "properties": {
-                    "owner_id": {
-                        "type": "integer"
-                    },
-                    "team_id": {
-                        "type": "integer"
-                    },
-                    "owner_name": {
+                    "@context": {
                         "type": "string"
+                    },
+                    "@type": {
+                        "type": "string"
+                    },
+                    "@id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "owns": {
+                        "type": "object",
+                        "properties": {
+                            "@type": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "integer"
+                            }
+                        }
                     }
                 },
                 "required": [
-                    "owner_id",
-                    "team_id",
-                    "owner_name"
+                    "@context",
+                    "@type",
+                    "@id",
+                    "name",
+                    "owns"
                 ]
             },
             "Owners": {
@@ -386,12 +512,23 @@
             "Mascot": {
                 "type": "object",
                 "properties": {
-                    "mascot": {
+                    "@context": {
+                        "type": "string"
+                    },
+                    "@type": {
+                        "type": "string"
+                    },
+                    "@id": {
+                        "type": "string"
+                    },
+                    "name": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "mascot"
+                    "@context",
+                    "@type",
+                    "name"
                 ]
             },
             "Mascots": {
@@ -404,12 +541,23 @@
             "Arena": {
                 "type": "object",
                 "properties": {
-                    "arena_name": {
+                    "@context": {
+                        "type": "string"
+                    },
+                    "@type": {
+                        "type": "string"
+                    },
+                    "@id": {
+                        "type": "string"
+                    },
+                    "name": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "arena_name"
+                    "@context",
+                    "@type",
+                    "name"
                 ]
             },
             "Arenas": {
