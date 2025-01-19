@@ -29,7 +29,7 @@ router.get('/logout', (req, res) => {
 
 router.get('/profile', (req, res) => {
     if (!req.isAuthenticated()) {
-        return res.render('error', { errorCode: 401, errorMessage: 'Potrebna je prijava kako bi imali pristup ovom resursu.' });
+        return res.status(401).render('error', { errorCode: 401, errorMessage: 'Potrebna je prijava kako bi imali pristup ovom resursu.' });
     }
 
     res.render('profile', { user: req.user});
@@ -37,7 +37,7 @@ router.get('/profile', (req, res) => {
 
 router.get('/refresh-data', async (req, res) => {
     if (!req.isAuthenticated()) {
-        return res.render('error', { errorCode: 401, errorMessage: 'Potrebna je prijava kako bi imali pristup ovom resursu.' });
+        return res.status(401).render('error', { errorCode: 401, errorMessage: 'Potrebna je prijava kako bi imali pristup ovom resursu.' });
     }
 
     try {
